@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class MemberListComponent implements OnInit {
 
   constructor() {
-    console.log(2);
+    
    }
 
   ngOnInit(): void {
-    console.log(1);
+   
   }
 
 }
