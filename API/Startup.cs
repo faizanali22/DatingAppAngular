@@ -54,8 +54,8 @@ namespace API
             // {
             //     app.UseDeveloperExceptionPage();
             app.UseMiddleware<ExceptionMiddleware>();
-          //  app.UseSwagger();
-           // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
+            //  app.UseSwagger();
+            // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
             // }
 
 
@@ -68,9 +68,13 @@ namespace API
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapFallbackToController("Index", "Fallback");
             });
         }
     }
